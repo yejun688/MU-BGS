@@ -1,73 +1,53 @@
-## TensoSDF: Roughness-aware Tensorial Representation for Robust Geometry and Material Reconstruction (SIGGRAPH 2024)
+## MU-BGS: Material Uncertainty-Aware Bidirectional Geometry Supervision for Dual-Branch Gaussian Splatting Inverse Rendering
 
-### [Paper](https://arxiv.org/abs/2402.02771) | [Project page](https://riga2.github.io/tensosdf/)
 
-![Teaser](https://github.com/Riga2/TensoSDF/blob/main/user-imgs/teaser.png)
 
-The method is based on [NeRO](https://github.com/liuyuan-pal/NeRO), please refer to it to setup the environment.
+<!-- ![Teaser](https://github.com/Riga2/TensoSDF/blob/main/user-imgs/teaser.png) -->
+
+The method is based on [TensoSDF](https://github.com/Riga2/TensoSDF) and [GS-ROR2](https://github.com/NK-CS-ZZL/GS-ROR)
+ and please refer to it to setup the environment.
 And then use pip to install the requirements.txt in this project.
 ```
-cd TensoSDF
+cd MU-BGS
 pip install -r requirements.txt
 ```
 
-## Datasets
-Download the [TensoSDF synthetic dataset](https://drive.google.com/file/d/1JI2kMvi_79JIUBGbUBckxeCAgrWEW0kl/view?usp=drive_link) and the [ORB real dataset](https://stanfordorb.github.io/). For the ORB dataset, We use the *blender_LDR.tar.gz* for training and *ground_truth.tar.gz* for evaluation.
+![](assets/pipeline.png)
 
-## TensoSDF synthetic dataset
+
+## Datasets
+We mainly evaluate our method on [Shiny Blender](https://github.com/google-research/multinerf), [Ref-Real](https://storage.googleapis.com/gresearch/refraw360/ref_real.zip), [Glossy Synthetic](https://github.com/liuyuan-pal/NeRO). [TensoIR dataset](https://zenodo.org/record/7880113#.ZE68FHZBz18) and [Environment Maps](https://drive.google.com/file/d/10WLc4zk2idf4xGb6nPL43OXTTHvAXSR3/view), [Synthetic4Relight](https://drive.google.com/file/d/1wWWu7EaOxtVq8QNalgs6kDqsiAm7xsRh/view) You can use ``nero2blender.py`` to convert the Glossy Synthetic data into Blender format.
+
+
 ### Geometry reconstruction
 
-Below take the "compressor" scene as an example:
+Below take the "angel" scene as an example:
 
 ```
-# you need to modify the "dataset_dir" in configs/shape/syn/compressor.yaml first.
+# you need to modify the "dataset_dir" in configs/shape/nerf-nerf/angel.yaml first.
 
 # reconstruct the geometry
-python run_training.py --cfg configs/shape/syn/compressor.yaml
+python run_training.py --cfg configs/shape/nerf-nerf/angel.yaml
 
 # evaluate the geometry reconstruction results via normal MAE metric
-python eval_geo.py --cfg configs/shape/syn/compressor.yaml
-
-# extract mesh from the model
-python extract_mesh.py --cfg configs/shape/syn/compressor.yaml
+python eval_geo.py --cfg configs/shape/nerf-nerf/angel.yaml
 ```
 
-Intermediate results will be saved at ```data/train_vis```. Models will be saved at ```data/model```. NVS results will be saved at ```data/nvs```. Extracted mesh will be saved at ```data/meshes```.
+Intermediate results will be saved at ```data/train_vis```. Models will be saved at ```data/model```. NVS results will be saved at ```data/nvs```.
 
 ### Material reconstruction
 
 ```
-# you need to modify the "dataset_dir" in configs/mat/syn/compressor.yaml first.
+# you need to modify the "dataset_dir" in configs/shape/nerf-nerf/angel.yaml first.
 
 # estimate the material
-python run_training.py --cfg configs/mat/syn/compressor.yaml
+python run_training.py --cfg configs/shape/nerf-nerf/angel.yaml
 
 # evaluate the relighting results using the estimated materials via PSNR, SSIM and LPIPS metrics
-python eval_mat.py --cfg configs/shape/syn/compressor.yaml --blender your_blender_path --env_dir your_environment_lights_dir
+python eval_mat.py --cfg configs/shape/nerf-nerf/angel.yaml--blender your_blender_path --env_dir your_environment_lights_dir
 ```
 Intermediate results will be saved at ```data/train_vis```. Models will be saved at ```data/model```. Extracted materials will be saved at ```data/materials```. Relighting results will be saved at ```data/relight```.
 
-## ORB real dataset
-### Geometry reconstruction
-
-Below take the "teapot" scene as an example:
-
-```
-# you need to modify the "dataset_dir" in configs/shape/orb/teapot.yaml first.
-
-# reconstruct the geometry
-python run_training.py --cfg configs/shape/orb/teapot.yaml
-
-# extract mesh from the model
-python extract_mesh.py --cfg configs/shape/orb/teapot.yaml
-
-# evaluate the geometry reconstruction results via the CD metric
-python eval_orb_shape.py --out_mesh_path data/meshes/teapot_scene006_shape-180000.ply --target_mesh_path your_ORB_GT_mesh_path
-```
-
-Intermediate results will be saved at ```data/train_vis```. Models will be saved at ```data/model```. Extracted mesh will be saved at ```data/meshes```.
-
-### Material reconstruction
 
 ```
 # you need to modify the "dataset_dir" in configs/mat/orb/teapot.yaml first.
@@ -83,15 +63,17 @@ python eval_orb_relight.py --relight_dir your_relighting_results_dir --gt_dir yo
 ```
 Intermediate results will be saved at ```data/train_vis```. Models will be saved at ```data/model```. Extracted materials will be saved at ```data/materials```. Relighting results will be saved at ```data/relight```.
 
-## BibTeX
-```
-@article{Li:2024:TensoSDF,
-  title={TensoSDF: Roughness-aware Tensorial Representation for Robust Geometry and Material Reconstruction},
-  author={Jia Li and Lu Wang and Lei Zhang and Beibei Wang},
-  journal ={ACM Transactions on Graphics (Proceedings of SIGGRAPH 2024)},
-  year = {2024},
-  volume = {43},
-  number = {4},
-  pages={150:1--13}
-}
-```
+
+## TODO List
+- [x] Release our checkpoints.
+
+
+
+## Acknowledgement
+
+We thank [Zuoliang Zhu](https://nk-cs-zzl.github.io/)  and [KenkanHuang](NJU) for his suggestions during the project.
+
+Here are some great resources we benefit from:
+[Ref-Gaussian](https://github.com/fudan-zvg/ref-gaussian), [GS-ROR](https://github.com/NK-CS-ZZL/GS-ROR), [TensoSDF](https://github.com/Riga2/TensoSDF), [IRGS](https://github.com/fudan-zvg/IRGS), [R3DG](https://github.com/NJU-3DV/Relightable3DGaussian), [GeoSpltting](https://github.com/PKU-VCL-Geometry/GeoSplatting) and [GS-IR](https://github.com/lzhnb/GS-IR).
+
+**If you develop/use MU-BGS in your projects, welcome to let us know. We will list your projects in this repository.**
