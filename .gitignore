@@ -1,0 +1,5 @@
+*/__pycache__/*
+/data/*
+/output/*
+/output_total_loss/*
+/output_total_sdf

@@ -1,0 +1,14 @@
+# CUDA_VISIBLE_DEVICES=1 python3 run_training.py --cfg configs/mat/syn/angel-nerf.yaml
+# CUDA_VISIBLE_DEVICES=1 python3 run_training.py --cfg configs/mat/syn/bell-nerf.yaml
+# CUDA_VISIBLE_DEVICES=1 python3 run_training.py --cfg configs/mat/syn/cat-nerf.yaml
+# CUDA_VISIBLE_DEVICES=1 python3 run_training.py --cfg configs/mat/syn/horse-nerf.yaml
+# CUDA_VISIBLE_DEVICES=1 python3 run_training.py --cfg configs/mat/syn/luyu-nerf.yaml
+# CUDA_VISIBLE_DEVICES=2 python3 run_training.py --cfg configs/mat/syn/potion-nerf.yaml
+# CUDA_VISIBLE_DEVICES=2 python3 run_training.py --cfg configs/mat/syn/tbell-nerf.yaml
+# CUDA_VISIBLE_DEVICES=2 python3 run_training.py --cfg configs/mat/syn/teapot-nerf.yaml
+CUDA_VISIBLE_DEVICES=2 python3 eval_mat.py --cfg configs/mat/syn/cat-nerf.yaml
+CUDA_VISIBLE_DEVICES=2 python3 eval_mat.py --cfg configs/mat/syn/horse-nerf.yaml
+CUDA_VISIBLE_DEVICES=2 python3 eval_mat.py --cfg configs/mat/syn/luyu-nerf.yaml
+CUDA_VISIBLE_DEVICES=2 python3 eval_mat.py --cfg configs/mat/syn/potion-nerf.yaml
+CUDA_VISIBLE_DEVICES=2 python3 eval_mat.py --cfg configs/mat/syn/tbell-nerf.yaml
+CUDA_VISIBLE_DEVICES=2 python3 eval_mat.py --cfg configs/mat/syn/teapot-nerf.yaml

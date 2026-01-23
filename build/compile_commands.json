@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/data/my-TensoSDF/build",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/CudaRasterizer.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_70,code=[compute_70,sm_70]\" \"--generate-code=arch=compute_75,code=[compute_75,sm_75]\" \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /data/my-TensoSDF/submodules/diff-surfel-rasterization/cuda_rasterizer/backward.cu -o CMakeFiles/CudaRasterizer.dir/cuda_rasterizer/backward.cu.o",
+  "file": "/data/my-TensoSDF/submodules/diff-surfel-rasterization/cuda_rasterizer/backward.cu",
+  "output": "CMakeFiles/CudaRasterizer.dir/cuda_rasterizer/backward.cu.o"
+},
+{
+  "directory": "/data/my-TensoSDF/build",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/CudaRasterizer.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_70,code=[compute_70,sm_70]\" \"--generate-code=arch=compute_75,code=[compute_75,sm_75]\" \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /data/my-TensoSDF/submodules/diff-surfel-rasterization/cuda_rasterizer/forward.cu -o CMakeFiles/CudaRasterizer.dir/cuda_rasterizer/forward.cu.o",
+  "file": "/data/my-TensoSDF/submodules/diff-surfel-rasterization/cuda_rasterizer/forward.cu",
+  "output": "CMakeFiles/CudaRasterizer.dir/cuda_rasterizer/forward.cu.o"
+},
+{
+  "directory": "/data/my-TensoSDF/build",
+  "command": "/usr/local/cuda/bin/nvcc -forward-unknown-to-host-compiler  --options-file CMakeFiles/CudaRasterizer.dir/includes_CUDA.rsp -g -std=c++17 \"--generate-code=arch=compute_70,code=[compute_70,sm_70]\" \"--generate-code=arch=compute_75,code=[compute_75,sm_75]\" \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -x cu -c /data/my-TensoSDF/submodules/diff-surfel-rasterization/cuda_rasterizer/rasterizer_impl.cu -o CMakeFiles/CudaRasterizer.dir/cuda_rasterizer/rasterizer_impl.cu.o",
+  "file": "/data/my-TensoSDF/submodules/diff-surfel-rasterization/cuda_rasterizer/rasterizer_impl.cu",
+  "output": "CMakeFiles/CudaRasterizer.dir/cuda_rasterizer/rasterizer_impl.cu.o"
+}
+]

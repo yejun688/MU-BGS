@@ -1,0 +1,3 @@
+/data/my-TensoSDF/build/CMakeFiles/CudaRasterizer.dir
+/data/my-TensoSDF/build/CMakeFiles/edit_cache.dir
+/data/my-TensoSDF/build/CMakeFiles/rebuild_cache.dir
