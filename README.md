@@ -12,7 +12,7 @@ cd MU-BGS
 pip install -r requirements.txt
 ```
 
-![](assets/pipeline.png)
+![](assets/MU-BGS_pipeline.png)
 
 
 ## Datasets
