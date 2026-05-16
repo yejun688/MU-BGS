@@ -65,7 +65,8 @@ Intermediate results will be saved at ```data/train_vis```. Models will be saved
 
 
 ## TODO List
-- [x] Release our checkpoints.
+- [x] Stanford dataset Dataloader
+- [x] refactor code
 
 
 
