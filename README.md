@@ -72,9 +72,9 @@ Intermediate results will be saved at ```data/train_vis```. Models will be saved
 
 ## Acknowledgement
 
-We thank [Zuoliang Zhu](https://nk-cs-zzl.github.io/)  and [KenkanHuang](NJU) for his suggestions during the project.
+We thank [Zuoliang Zhu](https://nk-cs-zzl.github.io/) for his suggestions during the project.
 
 Here are some great resources we benefit from:
-[Ref-Gaussian](https://github.com/fudan-zvg/ref-gaussian), [GS-ROR](https://github.com/NK-CS-ZZL/GS-ROR), [TensoSDF](https://github.com/Riga2/TensoSDF), [IRGS](https://github.com/fudan-zvg/IRGS), [R3DG](https://github.com/NJU-3DV/Relightable3DGaussian), [GeoSpltting](https://github.com/PKU-VCL-Geometry/GeoSplatting) and [GS-IR](https://github.com/lzhnb/GS-IR).
+[Ref-Gaussian](https://github.com/fudan-zvg/ref-gaussian), [GS-ROR](https://github.com/NK-CS-ZZL/GS-ROR), [Ref-NeuS](https://github.com/EnVision-Research/Ref-NeuS), [TensoSDF](https://github.com/Riga2/TensoSDF), [IRGS](https://github.com/fudan-zvg/IRGS), [R3DG](https://github.com/NJU-3DV/Relightable3DGaussian), [GeoSplatting](https://github.com/PKU-VCL-Geometry/GeoSplatting) and [GS-IR](https://github.com/lzhnb/GS-IR). 
 
 **If you develop/use MU-BGS in your projects, welcome to let us know. We will list your projects in this repository.**
