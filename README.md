@@ -1,4 +1,4 @@
-## MU-BGS: Material Uncertainty-Aware Bidirectional Geometry Supervision for Dual-Branch Gaussian Splatting Inverse Rendering
+## MU-BGS: Material Uncertainty-Aware Inverse Rendering via Dual-Branch Gaussian Splatting
 
 
 
