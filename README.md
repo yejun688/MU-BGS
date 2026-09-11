@@ -142,6 +142,10 @@ python eval_mat.py \
 | `data/relight/` | Relighting results |
 | `output/` | Gaussian-branch outputs |
 
+## 📝 TODO List
+
+- [ ] Release support for the Stanford-ORB dataset.
+
 ## 🌷 Acknowledgments
 
 We thank [Zuoliang Zhu](https://nk-cs-zzl.github.io/) for his suggestions.
